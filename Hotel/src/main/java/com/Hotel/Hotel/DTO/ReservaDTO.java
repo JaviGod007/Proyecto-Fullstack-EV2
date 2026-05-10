@@ -15,4 +15,5 @@ public class ReservaDTO {
     private String estado;
 
     private Integer total;
+    
 }

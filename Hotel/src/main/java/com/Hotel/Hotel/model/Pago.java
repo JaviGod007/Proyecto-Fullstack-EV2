@@ -36,7 +36,7 @@ public class Pago {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fecha_pago;
 
-    private String estodo;
+    private String Metodo;
 
     private Boolean estado;
 
