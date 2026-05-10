@@ -35,7 +35,7 @@ public class RolesService {
         dto.setNombre(roles.getNombre());
 
         if (roles.getUsuarios() != null) {
-            dto.setNombreUsuarios(roles.getUsuarios().getNombre());
+            dto.setNombreUsuarios(roles.getUsuario().getNombre());
         }else{
             dto.setNombreUsuarios("No hay usuarios asignados al rol");
         }

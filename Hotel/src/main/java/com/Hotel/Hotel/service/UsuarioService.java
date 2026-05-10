@@ -30,6 +30,21 @@ public class UsuarioService {
         return convertirADTO(usuario);
     }
 
+    public Usuario guardarUsuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+
+    public String eliminar(Integer id) {
+        try {
+            Usuario usuario = usuarioRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("¡Imposible eliminar! El héroe con ID " + id + " no existe."));
+            usuarioRepository.delete(usuario);
+            return "El héroe '" + usuario.getNombre() + "' ha sido retirado de la aventura exitosamente.";
+        } catch (RuntimeException e) {
+            return e.getMessage();
+        }
+    }
+
     private UsuarioDTO convertirADTO(Usuario usuario) {
         UsuarioDTO dto = new UsuarioDTO();
         dto.setId_usuario(usuario.getId_usuario());
