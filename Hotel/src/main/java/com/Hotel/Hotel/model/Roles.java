@@ -1,7 +1,5 @@
 package com.Hotel.Hotel.model;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,5 +29,5 @@ public class Roles {
 
     @OneToMany(mappedBy = "id_usuario")
     @ToString.Exclude
-    private List<Usuario> usuarios;
+    private Usuario usuario;
 }
