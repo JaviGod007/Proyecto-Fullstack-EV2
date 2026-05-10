@@ -11,7 +11,10 @@ import com.Hotel.Hotel.model.Reservas;
 import com.Hotel.Hotel.model.Roles;
 import com.Hotel.Hotel.repository.RolesRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
+@Transactional
 public class RolesService {
 
     @Autowired
