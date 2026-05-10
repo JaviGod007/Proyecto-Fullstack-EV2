@@ -47,7 +47,7 @@ public class ReservaHabService {
 
     private ReservaHabDTO convertirADTO(ReservaHabitacion reservaHab) {
         ReservaHabDTO dto = new ReservaHabDTO();
-        dto.setId__Reserva_Hab(reservaHab.getId__Reserva_Hab());
+        dto.setId__Reserva_Hab(reservaHab.getId_Reserva_Hab());
         dto.setPrecio_noche(reservaHab.getPrecio_noche());
 
         return dto;

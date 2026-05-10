@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Hotel.Hotel.DTO.ReservaDTO;
 import com.Hotel.Hotel.DTO.RolesDTO;
-import com.Hotel.Hotel.model.Reservas;
 import com.Hotel.Hotel.model.Roles;
 import com.Hotel.Hotel.repository.RolesRepository;
 
@@ -37,7 +35,7 @@ public class RolesService {
         dto.setId_roles(roles.getId_roles());
         dto.setNombre(roles.getNombre());
 
-        if (roles.getUsuarios() != null) {
+        if (roles.getUsuario() != null) {
             dto.setNombreUsuarios(roles.getUsuario().getNombre());
         }else{
             dto.setNombreUsuarios("No hay usuarios asignados al rol");

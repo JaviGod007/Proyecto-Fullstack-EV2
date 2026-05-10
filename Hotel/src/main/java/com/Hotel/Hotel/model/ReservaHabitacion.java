@@ -2,6 +2,7 @@ package com.Hotel.Hotel.model;
 
 import org.hibernate.annotations.ManyToAny;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,17 +24,21 @@ public class ReservaHabitacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id__Reserva_Hab;
+    @Column(name = "ID_Reserva_Hab")
+    private Integer Id_Reserva_Hab;
 
-    @NotNull
+    @NotNull(message = "El precio por noche no puede ser nulo")
+    @Column(nullable = false)
     private Integer Precio_noche;
 
     @OneToMany
     @JoinColumn(name = "ID_reserva")
+    @Column(nullable = false)
     private Reservas reservas;
 
     @ManyToAny
     @JoinColumn(name = "ID_Habitacion")
+    @Column(nullable = false)
     private Habitacion habitacion;
 
 
