@@ -43,6 +43,15 @@ public class UsuarioController {
         }
     }
 
+    @GetMapping("/correo/{correo}")
+    public ResponseEntity<List<UsuarioDTO>> buscarPorCorreo(@PathVariable String correo) {
+        List<UsuarioDTO> usuario =usuarioService.buscarPorCorreo(correo);
+        if (usuario.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Usuario> agregarUsuario(@RequestBody Usuario usuario) {
         try {

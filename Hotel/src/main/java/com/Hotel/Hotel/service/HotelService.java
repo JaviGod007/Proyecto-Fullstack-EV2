@@ -27,6 +27,12 @@ public class HotelService {
         return convertirADTO(hotel);
     }
 
+    public List<HotelDTO> buscarPorNombre(String nombre) {
+        return hotelRepository.findByNombre(nombre).stream()
+                .map(this::convertirADTO)
+                .toList();
+    }
+
     public HotelDTO guardarHotel(Hotel hotel) {
         Hotel guardado = hotelRepository.save(hotel);
         return convertirADTO(guardado);
@@ -34,7 +40,7 @@ public class HotelService {
 
     public String eliminar(Integer id) {
         if (!hotelRepository.existsById(id)) {
-            return "¡Imposible eliminar! El hotel con ID " + id + " no existe.";
+            return "El hotel con ID " + id + " no existe.";
         }
         hotelRepository.deleteById(id);
         return "El hotel ha sido eliminado exitosamente.";
@@ -44,7 +50,9 @@ public class HotelService {
         if (hotel == null) return null;
         HotelDTO dto = new HotelDTO();
        
-        dto.setId_hotel(hotel.getId_hotel()); 
+        dto.setId_hotel(hotel.getIdHotel());
+        dto.setNombre(hotel.getNombre());      
+        dto.setDireccion(hotel.getDireccion());
         
        
         return dto;

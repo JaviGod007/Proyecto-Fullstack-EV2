@@ -1,5 +1,6 @@
 package com.Hotel.Hotel.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,17 +18,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Usuarios")
+@Table(name = "usuarios")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_usuario;
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
 
     @NotBlank(message = "el nombre no puede estar en blanco")
     @Size(min = 3, max = 100, message = "El nombre debe tener entre 3 a 100 caracteres")
+    @Column(name = "nombre")
     private String nombre;
 
     @NotBlank(message = "el correo no puede estar en blanco")
+    @Column(name = "correo")
     private String correo;
 
     @ManyToOne

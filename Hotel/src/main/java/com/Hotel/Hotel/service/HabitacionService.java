@@ -58,7 +58,7 @@ public class HabitacionService {
         dto.setNumero(habitacion.getNumero());
 
         if (habitacion.getHotel() != null) {
-            dto.setID_Hotel(habitacion.getHotel().getId_hotel());
+            dto.setID_Hotel(habitacion.getHotel().getIdHotel());
         } else {
             dto.setID_Hotel(null);
         }

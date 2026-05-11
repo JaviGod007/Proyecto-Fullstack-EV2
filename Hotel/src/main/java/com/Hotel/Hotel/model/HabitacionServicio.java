@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Hab_Servicio")
+@Table(name = "hab_servicio")
 public class HabitacionServicio {
 
     @Id
@@ -31,4 +31,8 @@ public class HabitacionServicio {
     @ManyToOne
     @JoinColumn(name = "ID_servicio", nullable = false)
     private Servicio servicio;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo") 
+    private TipoHabitacion tipoHabitacion;
 }

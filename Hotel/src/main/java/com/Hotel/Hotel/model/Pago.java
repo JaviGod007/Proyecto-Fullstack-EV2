@@ -22,10 +22,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Pago")
+@Table(name = "pago")
 public class Pago {
 
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_pago")
     private Integer idPago; 
@@ -33,6 +33,7 @@ public class Pago {
     @ManyToOne
     @JoinColumn(name = "ID_reserva", nullable = false) 
     private Reservas reserva; 
+
     @NotNull(message = "El monto no puede ser nulo")
     @Column(nullable = false)
     private Integer monto;

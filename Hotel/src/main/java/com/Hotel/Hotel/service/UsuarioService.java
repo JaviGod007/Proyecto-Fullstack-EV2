@@ -30,6 +30,12 @@ public class UsuarioService {
         return convertirADTO(usuario);
     }
 
+    public List<UsuarioDTO> buscarPorCorreo(String correo){
+        return usuarioRepository.findByCorreo(correo).stream()
+                .map(this::convertirADTO)
+                .toList();
+    }
+
     public Usuario guardarUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
@@ -37,9 +43,9 @@ public class UsuarioService {
     public String eliminar(Integer id) {
         try {
             Usuario usuario = usuarioRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("¡Imposible eliminar! El héroe con ID " + id + " no existe."));
+                    .orElseThrow(() -> new RuntimeException("El usuario con ID " + id + " no existe."));
             usuarioRepository.delete(usuario);
-            return "El héroe '" + usuario.getNombre() + "' ha sido retirado de la aventura exitosamente.";
+            return "El usuario '" + usuario.getNombre() + "' ha sido eliminado exitosamente.";
         } catch (RuntimeException e) {
             return e.getMessage();
         }
@@ -47,7 +53,7 @@ public class UsuarioService {
 
     private UsuarioDTO convertirADTO(Usuario usuario) {
         UsuarioDTO dto = new UsuarioDTO();
-        dto.setId_usuario(usuario.getId_usuario());
+        dto.setIdUsuario(usuario.getIdUsuario());
         dto.setNombre(usuario.getNombre());
         dto.setCorreo(usuario.getCorreo());
 

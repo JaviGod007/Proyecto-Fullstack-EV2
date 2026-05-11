@@ -1,10 +1,12 @@
 package com.Hotel.Hotel.model;
 
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -17,17 +19,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Roles")
+@Table(name = "roles")
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_roles;
+    @Column(name = "ID_roles")
+    private Integer idroles;
     
     @NotBlank
     @Size(min = 3, max = 100, message = "el nombre del rol debe tener entre 3 y 100 caracteres" )
     private String nombre;
 
-    @OneToMany(mappedBy = "id_usuario")
+    @ManyToOne
     @ToString.Exclude
     private Usuario usuario;
 }

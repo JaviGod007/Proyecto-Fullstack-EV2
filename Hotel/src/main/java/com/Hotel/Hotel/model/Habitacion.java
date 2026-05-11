@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Habitacion")
+@Table(name = "habitacion")
 public class Habitacion {
 
     @Id
@@ -28,7 +28,7 @@ public class Habitacion {
     private Integer idHabitacion;
 
     @ManyToOne
-    @JoinColumn(name = "ID_hotel", nullable = false)
+    @JoinColumn(name = "id_hotel", nullable = false)
     private Hotel hotel;
 
     @ManyToOne

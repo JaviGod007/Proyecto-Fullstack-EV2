@@ -44,7 +44,7 @@ public class ServicioService {
 
     private ServicioDTO convertirADTO(Servicio servicio) {
         ServicioDTO dto = new ServicioDTO();
-        dto.setId_servicio(servicio.getId_Servicio());
+        dto.setId_servicio(servicio.getIdServicio());
         dto.setNombre(servicio.getNombre());
         dto.setPrecio(servicio.getPrecio());
         return dto;

@@ -18,6 +18,6 @@ public interface HabitacionRepository extends JpaRepository <Habitacion, Integer
     Habitacion findByNumero(Integer numero);
 
     // Buscar todas las habitaciones de un hotel específico (usando el ID del hotel)
-    List<Habitacion> findByHotelIdHotel(Integer idHotel);
+    List<Habitacion> findByHotel_IdHotel(Integer idHotel);
 
 }

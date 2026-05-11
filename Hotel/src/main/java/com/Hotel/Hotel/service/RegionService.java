@@ -44,7 +44,7 @@ public class RegionService {
 
     private RegionDTO convertirADTO(Region region) {
         RegionDTO dto = new RegionDTO();
-        dto.setId_region(region.getId_Region());
+        dto.setId_region(region.getIdRegion());
         dto.setNombre(region.getNombre());
         return dto;
     }
