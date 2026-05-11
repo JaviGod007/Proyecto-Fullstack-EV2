@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Comuna")
+@Table(name = "comuna")
 public class Comuna {
 
     @Id
@@ -26,7 +26,7 @@ public class Comuna {
     private Integer Id_Comuna;
 
     @ManyToOne
-    @JoinColumn(name = "ID_region", nullable = false)
+    @JoinColumn(name = "id_region", nullable = false)
     private Region region;
 
     @NotBlank(message = "El nombre de la comuna no puede estar en blanco")

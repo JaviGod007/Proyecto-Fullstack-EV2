@@ -40,15 +40,16 @@ public class TipoHabitacionService {
         return "Tipo de habitacion eliminado.";
     }
 
-    private TipoHabitacionDTO convertirADTO(TipoHabitacion tipo) {
-        if (tipo == null) return null;
+private TipoHabitacionDTO convertirADTO(TipoHabitacion tipo) {
+        if (tipo == null) return null; 
         TipoHabitacionDTO dto = new TipoHabitacionDTO();
-        
-      
-        dto.setId_tipo_hab(tipo.getId_Habitacion()); 
-        
-      
-        
+
+        dto.setIdTipo(tipo.getIdTipo());
+        dto.setNombre(tipo.getNombre());
+        dto.setDescripcion(tipo.getDescripcion());
+        dto.setCapacidad(tipo.getCapacidad());
+        dto.setPrecio(tipo.getPrecio());
+
         return dto;
     }
 }

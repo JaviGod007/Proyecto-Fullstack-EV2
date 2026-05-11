@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Region")
+@Table(name = "region")
 public class Region {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Region")
-    private Integer Id_Region;
+    @Column(name = "id_region")
+    private Integer idRegion;
 
     @NotBlank(message = "El nombre de la región no puede estar en blanco")
     @Column(nullable = false, length = 100)

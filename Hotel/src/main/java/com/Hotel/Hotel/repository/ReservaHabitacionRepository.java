@@ -12,7 +12,7 @@ public interface ReservaHabitacionRepository extends JpaRepository <ReservaHabit
 
     // 1. Buscar todas las habitaciones asociadas a una reserva específica
     // Ideal para mostrarle al cliente qué habitaciones reservó
-    List<ReservaHabitacion> findByReservasIdReserva(Integer idReserva);
+    List<ReservaHabitacion> findByReserva_IdReserva(Integer idReserva);
 
     // 2. Buscar el historial de una habitación específica
     // Ideal para saber cuántas veces se ha reservado una habitación

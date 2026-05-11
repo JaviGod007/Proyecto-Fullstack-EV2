@@ -9,10 +9,8 @@ import com.Hotel.Hotel.model.HabitacionServicio;
 public interface HabitacionServicioRepository extends JpaRepository<HabitacionServicio, Integer> {
 
 
-    List<HabitacionServicio> findByHabitacion_Id_Habitacion(Integer idHabitacion);
+    List<HabitacionServicio> findByHabitacion_IdHabitacion(Integer idHabitacion);
 
-    List<HabitacionServicio> findByServicio_Id_Servicio(Integer idServicio);
+    List<HabitacionServicio> findByServicio_IdServicio(Integer idServicio);
 
-   
-    void deleteByHabitacion_Id_Habitacion(Integer idHabitacion);
 }

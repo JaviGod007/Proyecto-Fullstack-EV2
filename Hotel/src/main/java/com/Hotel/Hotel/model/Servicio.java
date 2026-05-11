@@ -16,13 +16,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Servicio")
+@Table(name = "servicio")
 public class Servicio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Servicio")
-    private Integer Id_Servicio;
+    private Integer idServicio;
 
     @NotBlank(message = "El nombre del servicio no puede estar en blanco")
     @Column(nullable = false, length = 100)

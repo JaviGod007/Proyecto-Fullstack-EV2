@@ -30,9 +30,32 @@ public class RolesService {
         return convertirADTO(roles); // llamamos el rol por su id
     }
 
+    public List<RolesDTO> buscarPorNombre(String nombre){
+        return rolesRepository.findByNombre(nombre).stream()
+                .map(this::convertirADTO)
+                .toList();
+    }
+
+    //Guardamos un nuevo rol
+    public Roles guardarRol(Roles roles) {
+        return rolesRepository.save(roles);
+    }
+
+    //Borramos un rol por su id
+    public String eliminar(Integer id) {
+        try {
+            Roles roles = rolesRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException(" El rol con ID " + id + " no existe."));
+            rolesRepository.delete(roles);
+            return "El héroe '" + roles.getNombre() + "El rol a sido eliminado exitosamente.";
+        } catch (RuntimeException e) {
+            return e.getMessage();
+        }
+    }
+
     private RolesDTO convertirADTO(Roles roles) {
         RolesDTO dto = new RolesDTO();
-        dto.setId_roles(roles.getId_roles());
+        dto.setId_roles(roles.getIdroles());
         dto.setNombre(roles.getNombre());
 
         if (roles.getUsuario() != null) {

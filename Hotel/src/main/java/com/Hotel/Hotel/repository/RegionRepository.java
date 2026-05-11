@@ -12,6 +12,5 @@ public interface RegionRepository extends JpaRepository<Region, Integer> {
 
     List<Region> findByNombreContainingIgnoreCase(String nombre);
 
-
     List<Region> findAllByOrderByNombreAsc();
 }

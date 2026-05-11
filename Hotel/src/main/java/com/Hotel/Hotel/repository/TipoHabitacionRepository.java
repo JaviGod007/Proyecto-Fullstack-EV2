@@ -13,5 +13,5 @@ public interface TipoHabitacionRepository extends JpaRepository<TipoHabitacion, 
 
     List<TipoHabitacion> findByNombreContainingIgnoreCase(String nombre);
 
-    List<TipoHabitacion> findByPrecioBaseLessThanEqual(Double precioBase);
+    List<TipoHabitacion> findByPrecio(Integer precio);
 }

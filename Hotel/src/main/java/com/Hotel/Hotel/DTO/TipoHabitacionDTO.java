@@ -4,7 +4,14 @@ import lombok.Data;
 
 @Data
 public class TipoHabitacionDTO {
-    private Integer id_tipo_hab;
+
+    private Integer idTipo;
+
     private String nombre;
-    private Double precio_base;
+
+    private String descripcion;
+
+    private Integer capacidad;
+    
+    private Integer precio;
 }

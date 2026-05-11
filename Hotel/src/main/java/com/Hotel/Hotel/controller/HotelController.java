@@ -28,24 +28,23 @@ public class HotelController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
+    public ResponseEntity<HotelDTO> buscarPorId(@PathVariable Integer id) {
         try {
             HotelDTO hotel = hotelService.buscarPorId(id);
             return new ResponseEntity<>(hotel, HttpStatus.OK);
         } catch (RuntimeException e) {
-           
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping
-    public ResponseEntity<?> agregarHotel(@RequestBody Hotel hotel) {
+    public ResponseEntity<HotelDTO> agregarHotel(@RequestBody Hotel hotel) {
         try {
             
             HotelDTO guardado = hotelService.guardarHotel(hotel);
             return new ResponseEntity<>(guardado, HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<>("Error al crear el hotel: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
