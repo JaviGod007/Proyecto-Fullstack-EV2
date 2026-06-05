@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class ReservaHabDTO {
 
-    private Integer Id__Reserva_Hab;
+    private Integer idReservaHab;
 
-    private Integer Precio_noche;
+    private Integer precioNoche;
 
-    private Integer id_habitacion;
+    private Integer idHabitacion;
 
 
 }

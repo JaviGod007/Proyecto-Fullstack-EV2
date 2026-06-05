@@ -11,7 +11,7 @@ import com.Hotel.Hotel.model.Roles;
 public interface RolesRepository extends JpaRepository<Roles, Integer> {
     
     //buscar un rol por su id
-    List<Roles> findByIdroles(Integer id_roles);
+    List<Roles> findByIdroles(Integer idRoles);
 
     //buscar un rol por su nombre
     List<Roles> findByNombre(String nombre);

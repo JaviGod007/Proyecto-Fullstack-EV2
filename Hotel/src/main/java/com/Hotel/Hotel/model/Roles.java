@@ -24,7 +24,7 @@ public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_roles")
-    private Integer idroles;
+    private Integer idRoles;
     
     @NotBlank
     @Size(min = 3, max = 100, message = "el nombre del rol debe tener entre 3 y 100 caracteres" )

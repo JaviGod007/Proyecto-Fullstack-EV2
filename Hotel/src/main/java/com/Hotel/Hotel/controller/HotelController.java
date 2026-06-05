@@ -48,13 +48,4 @@ public class HotelController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarHotel(@PathVariable Integer id) {
-        String resultado = hotelService.eliminar(id);
-        if (resultado.contains("exitosamente")) {
-            return new ResponseEntity<>(resultado, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(resultado, HttpStatus.NOT_FOUND);
-        }
-    }
 }

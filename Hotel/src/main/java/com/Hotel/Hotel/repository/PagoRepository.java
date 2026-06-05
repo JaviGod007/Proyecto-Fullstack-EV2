@@ -11,7 +11,7 @@ import com.Hotel.Hotel.model.Pago;
 public interface PagoRepository extends JpaRepository <Pago , Integer> {
 
     // Buscar todos los pagos de una reserva específica
-    List<Pago> findByReserva_IdReserva(Integer idReserva);
+    List<Pago> findByReserva_idReserva(Integer idReserva);
     
     // Buscar pagos por método (ej. "TARJETA")
     List<Pago> findByMetodo(String metodo);

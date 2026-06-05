@@ -47,7 +47,7 @@ public class HabitacionServicioService {
 
     private HabitacionServicioDTO convertirADTO(HabitacionServicio hs) {
         HabitacionServicioDTO dto = new HabitacionServicioDTO();
-        dto.setId_hab_servicio(hs.getId_Hab_Servicio());
+        dto.setIdHabServicio(hs.getIdHabServicio());
 
         // Lógica para llenar los datos legibles en el DTO
         if (hs.getHabitacion() != null) {

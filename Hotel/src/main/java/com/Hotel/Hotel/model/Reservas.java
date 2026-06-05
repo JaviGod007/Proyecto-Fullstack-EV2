@@ -28,10 +28,10 @@ public class Reservas {
     private Integer idReserva;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate fecha_inicio;
+    private LocalDate fechaInicio;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate fecha_fin;
+    private LocalDate fechaFin;
 
     private String estado;
 

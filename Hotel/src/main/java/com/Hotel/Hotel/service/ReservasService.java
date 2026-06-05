@@ -56,9 +56,9 @@ public class ReservasService {
 
     private ReservaDTO convertirADTO(Reservas reservas) {
         ReservaDTO dto = new ReservaDTO();
-        dto.setId_reserva(reservas.getIdReserva());
-        dto.setFecha_inicio(reservas.getFecha_inicio());
-        dto.setFecha_fin(reservas.getFecha_fin());
+        dto.setIdReserva(reservas.getIdReserva());
+        dto.setFechaInicio(reservas.getFechaInicio());
+        dto.setFechaFin(reservas.getFechaFin());
         dto.setEstado(reservas.getEstado());
         dto.setTotal(reservas.getTotal());
         

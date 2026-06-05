@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 public class ReservaDTO {
-    private Integer id_reserva;
+    private Integer idReserva;
 
-    private LocalDate fecha_inicio;
+    private LocalDate fechaInicio;
 
-    private LocalDate fecha_fin;
+    private LocalDate fechaFin;
 
     private String estado;
 
