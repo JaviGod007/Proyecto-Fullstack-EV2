@@ -31,20 +31,9 @@ public class RegionService {
         return regionRepository.save(region);
     }
 
-    public String eliminar(Integer id) {
-        try {
-            Region region = regionRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("ID " + id + " no existe."));
-            regionRepository.delete(region);
-            return "Region '" + region.getNombre() + "' eliminada exitosamente.";
-        } catch (RuntimeException e) {
-            return e.getMessage();
-        }
-    }
-
     private RegionDTO convertirADTO(Region region) {
         RegionDTO dto = new RegionDTO();
-        dto.setId_region(region.getIdRegion());
+        dto.setIdRegion(region.getIdRegion());
         dto.setNombre(region.getNombre());
         return dto;
     }

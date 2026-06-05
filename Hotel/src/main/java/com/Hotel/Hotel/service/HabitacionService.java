@@ -24,8 +24,8 @@ public class HabitacionService {
                 .toList();
     }
 
-    public HabitacionDTO buscarPorId(Integer id_habitacion) {
-        Habitacion habitacion = habitacionRepository.findById(id_habitacion)
+    public HabitacionDTO buscarPorId(Integer idHabitacion) {
+        Habitacion habitacion = habitacionRepository.findById(idHabitacion)
                 .orElseThrow(() -> new RuntimeException("La habitacion no existe"));
         return convertirADTO(habitacion); 
     }
@@ -54,13 +54,13 @@ public class HabitacionService {
     private HabitacionDTO convertirADTO(Habitacion habitacion) {
         HabitacionDTO dto = new HabitacionDTO();
         dto.setEstado(habitacion.getEstado());
-        dto.setId_Habitacion(habitacion.getIdHabitacion());
+        dto.setIdHabitacion(habitacion.getIdHabitacion());
         dto.setNumero(habitacion.getNumero());
 
         if (habitacion.getHotel() != null) {
-            dto.setID_Hotel(habitacion.getHotel().getIdHotel());
+            dto.setIdHotel(habitacion.getHotel().getIdHotel());
         } else {
-            dto.setID_Hotel(null);
+            dto.setIdHotel(null);
         }
 
         return dto;

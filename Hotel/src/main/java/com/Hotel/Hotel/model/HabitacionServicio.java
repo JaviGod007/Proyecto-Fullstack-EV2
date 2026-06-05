@@ -22,7 +22,7 @@ public class HabitacionServicio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Hab_Servicio")
-    private Integer Id_Hab_Servicio;
+    private Integer idHabServicio;
 
     @ManyToOne
     @JoinColumn(name = "ID_habitacion", nullable = false)

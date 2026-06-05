@@ -38,19 +38,11 @@ public class HotelService {
         return convertirADTO(guardado);
     }
 
-    public String eliminar(Integer id) {
-        if (!hotelRepository.existsById(id)) {
-            return "El hotel con ID " + id + " no existe.";
-        }
-        hotelRepository.deleteById(id);
-        return "El hotel ha sido eliminado exitosamente.";
-    }
-
     private HotelDTO convertirADTO(Hotel hotel) {
         if (hotel == null) return null;
         HotelDTO dto = new HotelDTO();
        
-        dto.setId_hotel(hotel.getIdHotel());
+        dto.setIdHotel(hotel.getIdHotel());
         dto.setNombre(hotel.getNombre());      
         dto.setDireccion(hotel.getDireccion());
         

@@ -23,7 +23,7 @@ public class Comuna {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Comuna")
-    private Integer Id_Comuna;
+    private Integer idComuna;
 
     @ManyToOne
     @JoinColumn(name = "id_region", nullable = false)

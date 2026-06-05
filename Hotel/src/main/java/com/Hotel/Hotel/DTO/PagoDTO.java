@@ -6,7 +6,7 @@ import lombok.Data;
 public class PagoDTO {
 
 
-    private Integer Id_pago;
+    private Integer idPago;
 
     private Integer monto;
 
@@ -14,5 +14,5 @@ public class PagoDTO {
 
     private Boolean estado;
 
-    private Integer ID_reserva;
+    private Integer idReserva;
 }

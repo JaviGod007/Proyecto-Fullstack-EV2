@@ -31,20 +31,9 @@ public class ComunaService {
         return comunaRepository.save(comuna);
     }
 
-    public String eliminar(Integer id) {
-        try {
-            Comuna comuna = comunaRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("ID " + id + " no existe."));
-            comunaRepository.delete(comuna);
-            return "Comuna '" + comuna.getNombre() + "' eliminada exitosamente.";
-        } catch (RuntimeException e) {
-            return e.getMessage();
-        }
-    }
-
     private ComunaDTO convertirADTO(Comuna comuna) {
         ComunaDTO dto = new ComunaDTO();
-        dto.setId_comuna(comuna.getId_Comuna());
+        dto.setIdComuna(comuna.getIdComuna());
         dto.setNombre(comuna.getNombre());
         if (comuna.getRegion() != null) {
             dto.setNombreRegion(comuna.getRegion().getNombre());

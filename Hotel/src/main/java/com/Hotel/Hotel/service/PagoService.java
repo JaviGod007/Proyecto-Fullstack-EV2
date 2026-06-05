@@ -40,28 +40,17 @@ public class PagoService {
         return pagoRepository.save(pago);
     }
 
-    public String eliminar(Integer id) {
-        try {
-            Pago pago = pagoRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("¡Imposible eliminar! El pago con ID " + id + " no existe."));
-            pagoRepository.delete(pago);
-            return "El pago '" + pago.getIdPago() + "' ha sido eliminado exitosamente.";
-        } catch (RuntimeException e ) {
-            return e.getMessage();
-        }
-    }
-
     private PagoDTO convertirADTO(Pago pago) {
         PagoDTO dto = new PagoDTO();
-        dto.setId_pago(pago.getIdPago());
+        dto.setIdPago(pago.getIdPago());
         dto.setMonto(pago.getMonto());
         dto.setMetodo(pago.getMetodo());
         dto.setEstado(pago.getEstado());
 
         if (pago.getReserva() != null) {
-            dto.setID_reserva(pago.getIdPago());
+            dto.setIdReserva(pago.getIdPago());
         } else{
-            dto.setID_reserva(null);
+            dto.setIdReserva(null);
         }
             
 
